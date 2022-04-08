@@ -38,17 +38,13 @@ class ActorPlayer:
 
 
 	def click(self, event, linha, coluna):
-		#global myBoard
 		self.myBoard.click(linha, coluna)
 		newState = self.myBoard.getState()
 		self.labelMessage['text']=newState.getMessage()
-		#print("CLICK linha:"+str(linha)+" / coluna:"+str(coluna))
-		#print("-------------------------"+newState.getMessage())
 		for x in range(3):
 			for y in range(3):
 				label = self.boardView[x][y]
 				value = newState.getValue(x+1, y+1)
-				#print(str(value))
 				if value==0:
 					label['imag'] = self.empty
 				elif value==1:
